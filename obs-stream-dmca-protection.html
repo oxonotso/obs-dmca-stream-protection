@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>obs-stream-dmca-protection</title>
+<!-- Enable when debuging html: Custpm CSS is refreshed by OBS --><meta http-equiv="refresh" content="5"><!-- --->
+</head>
+<style>
+  body{margin:0px auto;overflow:hidden; background-color: lightgrey}
+  .helpText{color:white;font-size:18px;}
+  .customCssText{color:green;font-size:18px;}
+  .dmcaStyleText{color:red;font-size:12px}
+  #dateTimeText{color:green;font-size:36px;position:absolute;bottom:12px;left:12px;}
+  #dmcaLogo{position:absolute;bottom:12px;right:12px;}
+  #modelLogo{position:absolute;top:12px;right:12px;}
+  #extra1Text{color:green;font-size:24px;position:absolute;top:12px;center:12px;}
+  #extra2Text{color:green;font-size:24px;position:absolute;bottom:0px;center:0px;}
+  #extra3Text{color:green;font-size:24px;position:absolute;top:12px;left:12px;}
+</style>
+<body translate="no" >
+  <div class="helpText">
+    <p><p> <!-- TODO:  -->
+    <h2>obs-stream-dmca-protection</h2>
+    <a href="https:oxonotso/obs-stream-dmca-protection">https:oxonotso/obs-stream-dmca-protection</a><br>
+    <a href="https://github.com/oxonotso/obs-dmca-stream-protection">https://github.com/oxonotso/obs-dmca-stream-protection</a>
+    <h3>Help</h3>
+    Add Browser source with local file, "this" file.<br>
+    Use the Custom CSS below, in the Custom CSS area of the Browser Source, for demo.<br>
+    Customise the Browser Souce Custom CSS and the image assets.
+    <h4>Custom CSS</h4>
+    The Browser Spource Custom CSS for demo purposes.
+    <div class="customCssText">
+      <pre>
+      body{margin:0px auto;overflow:hidden;}
+      </pre>
+    </div>
+  </div>
+  <div class="dmcaStyleText">
+    <p>
+      <h3>DMCA</h3>
+      <b>DMCA LEGAL PRIVACY POLICY:</b>
+      Any UNAUTHORIZED use of my profile, video, pictures or audio in any form or in a forum now or in the future is NOT permissible without my expressed written consent. Any act to promote or gain profit in any manner (e.g. either monetarily or socially) from the use of my profile, video, pictures or audio in any form my profile is a violation of my privacy and subject to legal action. BY WATCHING THIS: You acknowledge and agree that you shall not post, upload, publish, transmit or make available in any way content of this page including images and recording streamed live video available for download. This is intended as, and presented as a one time, live, one view presentation only. Penalties of Copyright Infringement: By reproducing, republishing or redistributing the work of a copyright holder without permission, you may be violating or infringing on his or her rights under the Copyright Act. The copyright holder may sue for compensation cost from $ 250 to $ 150,000 or one year in jail.<br>
+      <b>Extract of Chaturbate Terms and Conditions</b><br>
+      Notice of Intellectual Property Infringement. The Site respects the intellectual property of others, and we ask our community members and others to do the same. We voluntarily observe and comply with the DMCA. IT IS CHATURBATES POLICY TO TERMINATE ACCOUNTS OF REPEAT COPYRIGHT INFRINGERS WHEN APPROPRIATE.
+    </p>
+  </div>
+  <div id="dateTimeText"></div>
+  <div id="dmcaLogo"><img src="assets/dmca.png"/></div>
+  <div id="modelLogo"><img src="assets/logo.png"/></div>
+  <div id="extraText1"></div>
+  <div id="extraText2"></div>
+  <div id="extraText3"></div>
+
+  <script src='js/moment.min.js'></script>
+  <script>
+var urlParams;
+(function () {
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+
+    urlParams = {};
+    while (match = search.exec(query))
+       urlParams[decode(match[1])] = decode(match[2]);
+})();
+
+var dateTimeText = document.getElementById("dateTimeText");
+if (urlParams["style"]) dateTimeText.setAttribute("style", urlParams["style"]);
+if (urlParams["bodyStyle"]) document.body.setAttribute("style", urlParams["bodyStyle"]);
+<!-- todo
+if (urlParams["extraText1"]) document.getElementById('extra1Text').value=urlParams["extraText1"] ;
+--->
+
+var c;
+setInterval(
+c = function() {
+    dateTimeText.innerText = moment().format(urlParams["format"] + "Local"|| 'ERROR');
+}, 1000);
+c();
+
+  </script>
+</body>
+</html>
