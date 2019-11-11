@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>obs-stream-dmca-protection</title>
-<!-- Enable when debuging html: Custpm CSS is refreshed by OBS <meta http-equiv="refresh" content="5"><!-- --->
+<!--  <meta http-equiv="refresh" content="5"> --->
 </head>
 <style>
-  body{margin:0px auto;overflow:hidden; background-color: lightgrey}
+  body{margin:0px auto;overflow:hidden;}
   .helpText{color:white;font-size:18px;}
   .customCssText{color:green;font-size:18px;}
   .dmcaStyleText{color:red;font-size:12px}
@@ -31,13 +31,13 @@
     The Browser Spource Custom CSS for demo purposes.
     <div class="customCssText">
       <pre>
-        body{margin:0px auto;overflow:hidden; background-color: lightgrey}
-        .helpText{color:white;font-size:18px;}
-        .customCssText{color:green;font-size:18px;}
-        .dmcaStyleText{color:red;font-size:12px}
+        body{margin:0px auto;overflow:hidden;}
+        .helpText{visibility:hidden;color:white;font-size:18px;}
+        .customCssText{visibility:hidden;color:green;font-size:18px;}
+        .dmcaStyleText{visibility:hidden;color:red;font-size:12px}
         #dateTimeText{color:green;font-size:36px;position:absolute;bottom:12px;left:12px;}
         #dmcaLogo{position:absolute;bottom:12px;right:12px;}
-        #modelLogo{position:absolute;top:12px;right:12px;}
+        #modelLogo{visibility:hidden;position:absolute;top:12px;right:12px;}
       </pre>
     </div>
   </div>
@@ -59,6 +59,7 @@
 
   <script src='js/moment.min.js'></script>
   <script>
+// https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
 var urlParams;
 (function () {
     var match,
@@ -75,14 +76,11 @@ var urlParams;
 var dateTimeText = document.getElementById("dateTimeText");
 if (urlParams["style"]) dateTimeText.setAttribute("style", urlParams["style"]);
 if (urlParams["bodyStyle"]) document.body.setAttribute("style", urlParams["bodyStyle"]);
-<!-- todo
-if (urlParams["extraText1"]) document.getElementById('extra1Text').value=urlParams["extraText1"] ;
---->
 
 var c;
 setInterval(
 c = function() {
-    dateTimeText.innerText = moment().format(urlParams["format"] + "Local"|| 'ERROR');
+    dateTimeText.innerText = moment().format(urlParams["format"] || '');
 }, 1000);
 c();
 
