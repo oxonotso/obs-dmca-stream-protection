@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>obs-stream-dmca-protection</title>
-<!-- debug  <meta http-equiv="refresh" content="5"> --->
 </head>
 <style>
-  body{margin:0px auto;overflow:hidden;}
+  body{margin:12px auto;overflow:hidden;}
   .helpText{color:green;font-size:18px;}
   .customCssText{color:limegreen;font-size:18px;}
   .dmcaStyleText{color:red;font-size:12px}
   #dateTimeText{color:limegreen;font-size:36px;position:absolute;bottom:12px;left:12px;}
   #dmcaLogo{position:absolute;bottom:12px;right:12px;}
   #modelLogo{position:absolute;top:12px;right:12px;}
-  #flagCounter{position:absolute;top:12px;right:12px;}
+  #counter{visibility:hidden;position:absolute;top:12px;right:12px;}
   #extra1Text{color:green;font-size:24px;position:absolute;top:12px;center:12px;}
   #extra2Text{color:green;font-size:24px;position:absolute;bottom:0px;center:0px;}
   #extra3Text{color:green;font-size:24px;position:absolute;top:12px;left:12px;}
@@ -22,7 +21,7 @@
   <div class="helpText">
     <p><p> <!-- TODO:  -->
     <h2>obs-stream-dmca-protection</h2>
-    <a href="https:oxonotso/obs-stream-dmca-protection">https:oxonotso/obs-stream-dmca-protection</a><br>
+    <a href="https://oxonotso.com/obs-dmca-stream-protection/">https://oxonotso.com/obs-dmca-stream-protection/</a><br>
     <a href="https://github.com/oxonotso/obs-dmca-stream-protection">https://github.com/oxonotso/obs-dmca-stream-protection</a>
     <h3>Help</h3>
     - Download files: <a href="https://github.com/oxonotso/obs-dmca-stream-protection/archive/master.zip">https://github.com/oxonotso/obs-dmca-stream-protection/archive/master.zip</a>
@@ -34,15 +33,15 @@
     <div class="customCssText">
       <pre>
         body{margin:0px auto;overflow:hidden;}
-        .helpText{visibility:hidden;color:white;font-size:18px;}
-        .customCssText{visibility:hidden;color:green;font-size:18px;}
+        .helpText{visibility:hidden;color:green;font-size:18px;}
+        .customCssText{visibility:hidden;color:limegreen;font-size:18px;}
         .dmcaStyleText{visibility:hidden;color:red;font-size:12px}
-        #dateTimeText{color:green;font-size:36px;position:absolute;bottom:12px;left:12px;}
+        #dateTimeText{color:limegreen;font-size:36px;position:absolute;bottom:12px;left:12px;}
         #dmcaLogo{position:absolute;bottom:12px;right:12px;}
         #modelLogo{visibility:hidden;position:absolute;top:12px;right:12px;}
       </pre>
     </div>
-    <a id='flagCounter' href="https://info.flagcounter.com/0lno"><img src="https://s01.flagcounter.com/count2/0lno/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Free counters!" border="0"></a>
+    <a id='counter' href="https://info.flagcounter.com/0lno"><img src="https://s01.flagcounter.com/count2/0lno/bg_FFFFFF/txt_000000/border_CCCCCC/columns_3/maxflags_9/viewers_3/labels_0/pageviews_0/flags_0/percent_1/" alt="Free counters!" border="0"></a>
   </div>
   <div class="dmcaStyleText">
     <p>
@@ -55,7 +54,7 @@
   </div>
   <div id="dateTimeText"></div>
   <div id="dmcaLogo"><a href="https://www.dmca.com/Protection/Status.aspx?ID=ff7c043b-f6f5-4724-8c30-94f09e56ced3&refurl=https://github.com/oxonotso/obs-dmca-stream-protection"><img src="assets/dmca.png"/></a></div>
-  <div id="flagCounter"><a href="https://info.flagcounter.com/0lno"><img src="https://s01.flagcounter.com/count2/0lno/bg_FFFFFF/txt_000000/border_CCCCCC/columns_5/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" alt="Free counters!" border="0"></a></div>
+  <div id="counter"><a href="https://info.flagcounter.com/0lno"><img src="https://s01.flagcounter.com/count2/0lno/bg_FFFFFF/txt_000000/border_CCCCCC/columns_5/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" alt="Free counters!" border="0"></a></div>
   <div id="modelLogo"><img src="assets/logo.png"/></div>
   <div id="extraText1"></div>
   <div id="extraText2"></div>
