@@ -1,71 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>obs-stream-dmca-protection</title>
-</head>
-<style>
-  body{margin:12px auto;overflow:hidden;}
-  .helpText{color:green;font-size:18px;}
-  .customCssText{color:limegreen;font-size:18px;}
-  .dmcaStyleText{color:red;font-size:12px}
-  #dateTimeText{color:limegreen;font-size:36px;position:absolute;bottom:12px;left:12px;}
-  #dmcaLogo{position:absolute;bottom:12px;right:12px;}
-  #modelLogo{position:absolute;top:12px;right:12px;}
-  #counter{visibility:hidden;position:absolute;top:12px;right:12px;}
-  #extra1Text{color:green;font-size:24px;position:absolute;top:12px;center:12px;}
-  #extra2Text{color:green;font-size:24px;position:absolute;bottom:0px;center:0px;}
-  #extra3Text{color:green;font-size:24px;position:absolute;top:12px;left:12px;}
-</style>
-<body translate="no" >
-  <div class="helpText">
-    <p><p> <!-- TODO:  -->
-    <h2>obs-stream-dmca-protection</h2>
-    <a href="https://oxonotso.com/obs-dmca-stream-protection/">https://oxonotso.com/obs-dmca-stream-protection/</a><br>
-    <a href="https://github.com/oxonotso/obs-dmca-stream-protection">https://github.com/oxonotso/obs-dmca-stream-protection</a>
-    <h3>Help</h3>
-    - Download files: <a href="https://github.com/oxonotso/obs-dmca-stream-protection/archive/master.zip">https://github.com/oxonotso/obs-dmca-stream-protection/archive/master.zip</a><br>
-    - In OBS, add Browser source with local file, "this" html file.<br>
-    - Change Width and Height to canvas size.<br>
-    - Use the Custom CSS below, in the Custom CSS area of the Browser Source, for demo.<br>
-    - Customise the Browser Souce Custom CSS and the image assets.
-    <h4>Custom CSS</h4>
-    The OBS Browser Source Custom CSS, showing Date/Time and DMCA in the OBS stream.
-    <div class="customCssText">
-      <pre>
-        body{margin:0px auto;overflow:hidden;}
-        .helpText{visibility:hidden;color:green;font-size:18px;}
-        .customCssText{visibility:hidden;color:limegreen;font-size:18px;}
-        .dmcaStyleText{visibility:hidden;color:red;font-size:12px}
-        #dateTimeText{color:limegreen;font-size:36px;position:absolute;bottom:12px;left:12px;}
-        #dmcaLogo{position:absolute;bottom:12px;right:12px;}
-        #modelLogo{visibility:hidden;position:absolute;top:12px;right:12px;}
-      </pre>
+  <head>
+    <meta charset="UTF-8">
+    <title>OBS Stream DMCA "Protection"</title>
+    <!-- <meta http-equiv="refresh" content="60" > --->
+  </head>
+  <style>
+/*
+    body { background-color: white; margin: 0px auto; overflow: auto; }
+*/
+    #dateTimeText { z-index: 3; position: fixed; bottom: 12px; left: 12px; font-size: 48px; color: #2BEF2A; }
+    #dmcaLogo { z-index: 2; position:fixed; bottom:12px; right:12px; }
+    #modelLogo { z-index: 1; position:absolute; top:12px; right:12px; }
+    .information { style="display:inline; width: 100%; margin: 6px;  font-size: 24px; a{color: black}" }
+    #customCSS { }
+    #customCssContents{ border: 2px solid #2BEF2A;  border-radius:12px; padding: 12px}
+    #dmcaText { border: 2px solid red;  border-radius:12px; padding: 12px; color: red; a{color: red} }
+  </style>
+  <body translate="no" >
+    <div id="dateTimeText"></div>
+    <div id="dmcaLogo">
+      <a href="https://www.dmca.com/Protection/Status.aspx?ID=ff7c043b-f6f5-4724-8c30-94f09e56ced3&refurl=https://github.com/oxonotso/obs-dmca-stream-protection"><img src="assets/dmca.png"/></a>
     </div>
-    <a id='counter' href="https://info.flagcounter.com/0lno"><img src="https://s01.flagcounter.com/count2/0lno/bg_FFFFFF/txt_000000/border_CCCCCC/columns_3/maxflags_9/viewers_3/labels_0/pageviews_0/flags_0/percent_1/" alt="Free counters!" border="0"></a>
-  </div>
-  <div class="dmcaStyleText">
-    <p>
-      <h3>DMCA</h3>
-      <b>DMCA LEGAL PRIVACY POLICY:</b>
-      Any UNAUTHORIZED use of my profile, video, pictures or audio in any form or in a forum now or in the future is NOT permissible without my expressed written consent. Any act to promote or gain profit in any manner (e.g. either monetarily or socially) from the use of my profile, video, pictures or audio in any form my profile is a violation of my privacy and subject to legal action. BY WATCHING THIS: You acknowledge and agree that you shall not post, upload, publish, transmit or make available in any way content of this page including images and recording streamed live video available for download. This is intended as, and presented as a one time, live, one view presentation only. Penalties of Copyright Infringement: By reproducing, republishing or redistributing the work of a copyright holder without permission, you may be violating or infringing on his or her rights under the Copyright Act. The copyright holder may sue for compensation cost from $ 250 to $ 150,000 or one year in jail.<br>
-      <b>Extract of Chaturbate Terms and Conditions</b><br>
-      Notice of Intellectual Property Infringement. The Site respects the intellectual property of others, and we ask our community members and others to do the same. We voluntarily observe and comply with the DMCA. IT IS CHATURBATES POLICY TO TERMINATE ACCOUNTS OF REPEAT COPYRIGHT INFRINGERS WHEN APPROPRIATE.
-    </p>
-  </div>
-  <div id="dateTimeText"></div>
-  <div id="dmcaLogo"><a href="https://www.dmca.com/Protection/Status.aspx?ID=ff7c043b-f6f5-4724-8c30-94f09e56ced3&refurl=https://github.com/oxonotso/obs-dmca-stream-protection"><img src="assets/dmca.png"/></a></div>
-  <div id="counter"><a href="https://info.flagcounter.com/0lno"><img src="https://s01.flagcounter.com/count2/0lno/bg_FFFFFF/txt_000000/border_CCCCCC/columns_5/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" alt="Free counters!" border="0"></a></div>
-  <div id="modelLogo"><img src="assets/logo.png"/></div>
-  <div id="extraText1"></div>
-  <div id="extraText2"></div>
-  <div id="extraText3"></div>
-  <script src="js/moment-with-locales.min.js">
-  </script>
-  <script>
-  document.addEventListener('DOMContentLoaded', (event) => {
-    timeDate();
-  })
-  </script>
-</body>
+    <div id="modelLogo"><img src="assets/logo.png"/></div>
+    <div class="information">
+      <h2>OBS Stream DMCA "Protection"</h2>
+      <a href="https://oxonotso.com/obs-dmca-stream-protection/">OBS stream DMCA "Protection"</a> @ <a href="https://oxonotso.com">https://oxonotso.com</a><br>
+      <h3>Quick Start</h3>
+      <a href="https://github.com/oxonotso/obs-dmca-stream-protection">Download Zip File</a><br>
+      In OBS, add Browser source, Local File, using "this" html file.<br>
+      Change Browser Width / Height to Canvas Size.<br>
+      Use the Custom CSS, below, as a Demo.<br>
+      Customise: Browser Source Custom CSS / Image Assets / HTML
+      <div id="customCSS">
+        <h4>OBS Browser Source Custom CSS</h4>
+        Example: Date/Time and DMCA Logo in the OBS stream.
+        <div id="customCssContents">
+          <pre>
+body {margin:0px auto;overflow: hidden;}
+.information {display: none;}
+          </pre>
+        </div>
+      </div>
+      <p/>
+      <div id="dmcaText">
+        <b>DMCA LEGAL PRIVACY POLICY:</b><br>
+        Any UNAUTHORIZED use of my profile, video, pictures or audio in any form or in a forum now or in the future is NOT permissible without my expressed written consent. Any act to promote or gain profit in any manner (e.g. either monetarily or socially) from the use of my profile, video, pictures or audio in any form my profile is a violation of my privacy and subject to legal action. <br>BY WATCHING THIS: You acknowledge and agree that you shall not post, upload, publish, transmit or make available in any way content of this page including images and recording streamed live video available for download. This is intended as, and presented as a one time, live, one view presentation only. Penalties of Copyright Infringement: By reproducing, republishing or redistributing the work of a copyright holder without permission, you may be violating or infringing on his or her rights under the Copyright Act.<br><b>The copyright holder may sue for compensation cost from $ 250 to $ 150,000 or one year in jail.</b>
+        <p/>
+        <b>Extract of Chaturbate Terms And Conditions</b><br>
+        Notice of Intellectual Property Infringement. The Site respects the intellectual property of others, and we ask our community members and others to do the same. We voluntarily observe and comply with the DMCA.<br><b>IT IS CHATURBATES POLICY TO TERMINATE ACCOUNTS OF REPEAT COPYRIGHT INFRINGERS WHEN APPROPRIATE.</b>
+      </div>
+      <p/>
+      <div id="dmcaLogoSpacer" style="display: block; visibility:hidden;">
+        <img src="assets/dmca.png"/></a>
+      </div>
+    <script src="js/moment-with-locales.min.js">
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        timeDate();
+      })
+    </script>
+  </body>
 </html>
